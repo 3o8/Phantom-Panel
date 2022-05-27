@@ -34,17 +34,17 @@ def logo():
 ╠═╝╠═╣╠═╣║║║ ║ ║ ║║║║
 ╩  ╩ ╩╩ ╩╝╚╝ ╩ ╚═╝╩ ╩
 Created by @sander.reg
-""" + Fore.WHITE)
+""")
 
 def accinfo():
     print(Fore.CYAN + "Username: " + keyauthapp.user_data.username)
     print("HWID: " + keyauthapp.user_data.hwid)
+    print("Subscription: " + keyauthapp.user_data.subscription)
     print("Expiry: " + datetime.utcfromtimestamp(int(keyauthapp.user_data.expires)).strftime('%Y-%m-%d %H:%M:%S'))
-    print("                                 ")
+    input(Fore.WHITE + "Press any key to go to the menu...")
 
-def menu():
+def menuBypass():
     logo()
-    accinfo()
     print("""1. Bypass
 2. Exit""" + Fore.WHITE)
 
@@ -52,17 +52,103 @@ def menu():
 
     if res == "1":
         memory.ChangeMemory(codes.bypass_pattern, codes.bypass_patched, 20)
-        menu()
+        menuBypass()
     elif res == "2":
         os._exit(0)  
-        
+
+def combat():
+    logo()
+    print("""
+1. AimBot
+2. AimNeck
+3. Aim FOV
+4. Aim Lock
+5. No recoil
+X. Back to menu""")
+    res = input(f'{Fore.CYAN}[PHANTOM]{Fore.WHITE} Select an option: ')
+    if res == "1":
+        memory.ChangeMemory(codes.aim_pattern, codes.aimbot_patched, 9)
+        combat()
+    elif res == "2":
+        memory.ChangeMemory(codes.aim_pattern, codes.aimneck_patched, 9)
+        combat()
+    elif res == "3":
+        memory.ChangeMemory(codes.aimfov_pattern, codes.aimfov_patched, 8)
+        combat()
+    elif res == "4":
+        memory.ChangeMemory(codes.aimlock_pattern, codes.aimlock_patched, 8)
+        combat()
+    elif res == "5":
+        memory.ChangeMemory(codes.norecoil_pattern, codes.norecoil_patched, 4)
+        combat()
+    elif res == "X":
+        menuPremium()
+    else:
+        combat()
+
+def visual():
+    logo()
+    print("""
+1. Antena
+2. No yellow
+X. Back to menu""")
+    res = input(f'{Fore.CYAN}[PHANTOM]{Fore.WHITE} Select an option: ')
+    if res == "1":
+        memory.ChangeMemory(codes.antena_pattern, codes.antena_patched, 8)
+        visual()
+    elif res == "2":
+        memory.ChangeMemory(codes.noyellow_pattern, codes.noyellow_patched, 16)
+        visual()
+    elif res == "X":
+        menuPremium()
+    else:
+        visual()
+
+def utils():
+    logo()
+    print("""
+1. Emulator bypass
+2. Back to menu""")
+    res = input(f'{Fore.CYAN}[PHANTOM]{Fore.WHITE} Select an option: ')
+    if res == "1":
+        memory.ChangeMemory(codes.bypass_pattern, codes.bypass_patched, 20)
+        menuPremium()
+    elif res == "X":
+        menuPremium()
+    else:
+        utils()
+    
+def menuPremium():
+    logo()
+    print("""
+1. Combat menu
+2. Visual menu
+3. Utils
+4. Exit""")
+    res = input(f'{Fore.CYAN}[PHANTOM]{Fore.WHITE} Select an option: ')
+    if res == "1":
+        combat()
+    elif res == "2":
+        visual()
+    elif res == "3":
+        utils()
+    elif res == "4":
+        os._exit(0)
+    else:
+        menuPremium()
 
 def login():
     logo()
     user = input(f'{Fore.CYAN}[PHANTOM]{Fore.WHITE} Username: ')
     password = input(f'{Fore.CYAN}[PHANTOM]{Fore.WHITE} Password: ')
     keyauthapp.login(user,password)
-    menu()
+    os.system('cls')
+    logo()
+    accinfo()
+    if keyauthapp.user_data.subscription == "bypass":
+        menuBypass()
+    elif keyauthapp.user_data.subscription == "premium":
+        menuPremium()
     
     
 login()
