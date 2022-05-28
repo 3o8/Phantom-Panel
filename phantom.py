@@ -91,6 +91,8 @@ def visual():
     print("""
 1. Antena
 2. No yellow
+3. Silent Speed hack
+4. Fly Hack
 X. Back to menu""")
     res = input(f'{Fore.CYAN}[PHANTOM]{Fore.WHITE} Select an option: ')
     if res == "1":
@@ -99,6 +101,10 @@ X. Back to menu""")
     elif res == "2":
         memory.ChangeMemory(codes.noyellow_pattern, codes.noyellow_patched, 16)
         visual()
+    elif res == "3":
+        memory.ChangeMemory(codes.silentspeed_pattern, codes.silentspeed_patched, 12)
+    elif res == "4":
+        memory.ChangeMemory(codes.fly_pattern, codes.fly_patched, 24)
     elif res == "X":
         menuPremium()
     else:
