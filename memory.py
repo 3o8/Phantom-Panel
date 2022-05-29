@@ -49,4 +49,4 @@ def ChangeMemory(pattern, patched, count):
             pymem.memory.write_bytes(pm.process_handle, addr, patched, count)
         gotPatched = True
         print(f"{Fore.CYAN}[PHANTOM]{Fore.WHITE} Applied")
-        time.sleep(5)
+        time.sleep(1)
