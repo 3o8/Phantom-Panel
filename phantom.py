@@ -30,11 +30,19 @@ def clear():
 
 def logo():
     clear()
-    print(Fore.CYAN + """╔═╗╦ ╦╔═╗╔╗╔╔╦╗╔═╗╔╦╗
-╠═╝╠═╣╠═╣║║║ ║ ║ ║║║║
-╩  ╩ ╩╩ ╩╝╚╝ ╩ ╚═╝╩ ╩
-Created by @sander.reg
-""")
+    print(f'''{Fore.CYAN}
+                                                                                                    
+                            ██████  ██   ██  █████  ███    ██ ████████  ██████  ███    ███ 
+                            ██   ██ ██   ██ ██   ██ ████   ██    ██    ██    ██ ████  ████ 
+                            ██████  ███████ ███████ ██ ██  ██    ██    ██    ██ ██ ████ ██ 
+                            ██      ██   ██ ██   ██ ██  ██ ██    ██    ██    ██ ██  ██  ██ 
+                            ██      ██   ██ ██   ██ ██   ████    ██     ██████  ██      ██ 
+                                                                                                  
+                                                                                                  
+                                                                                                  
+> Created by 444#9667                                                                             
+> https://www.instagram.com/sander.reg/                                                                         
+''')
 
 def accinfo():
     print(Fore.CYAN + "Username: " + keyauthapp.user_data.username)
@@ -55,90 +63,77 @@ def menuBypass():
         menuBypass()
     elif res == "2":
         os._exit(0)  
-
-def combat():
-    logo()
-    print("""
-1. AimBot
-2. AimNeck
-3. Aim FOV
-4. Aim Lock
-5. No recoil
-X. Back to menu""")
-    res = input(f'{Fore.CYAN}[PHANTOM]{Fore.WHITE} Select an option: ')
-    if res == "1":
-        memory.ChangeMemory(codes.aim_pattern, codes.aimbot_patched, 9)
-        combat()
-    elif res == "2":
-        memory.ChangeMemory(codes.aim_pattern, codes.aimneck_patched, 9)
-        combat()
-    elif res == "3":
-        memory.ChangeMemory(codes.aimfov_pattern, codes.aimfov_patched, 8)
-        combat()
-    elif res == "4":
-        memory.ChangeMemory(codes.aimlock_pattern, codes.aimlock_patched, 8)
-        combat()
-    elif res == "5":
-        memory.ChangeMemory(codes.norecoil_pattern, codes.norecoil_patched, 4)
-        combat()
-    elif res == "X":
-        menuPremium()
-    else:
-        combat()
-
-def visual():
-    logo()
-    print("""
-1. Antena
-2. No yellow
-3. Silent Speed hack
-4. Fly Hack
-X. Back to menu""")
-    res = input(f'{Fore.CYAN}[PHANTOM]{Fore.WHITE} Select an option: ')
-    if res == "1":
-        memory.ChangeMemory(codes.antena_pattern, codes.antena_patched, 8)
-        visual()
-    elif res == "2":
-        memory.ChangeMemory(codes.noyellow_pattern, codes.noyellow_patched, 16)
-        visual()
-    elif res == "3":
-        memory.ChangeMemory(codes.silentspeed_pattern, codes.silentspeed_patched, 12)
-    elif res == "4":
-        memory.ChangeMemory(codes.fly_pattern, codes.fly_patched, 24)
-    elif res == "X":
-        menuPremium()
-    else:
-        visual()
-
-def utils():
-    logo()
-    print("""
-1. Emulator bypass
-2. Back to menu""")
-    res = input(f'{Fore.CYAN}[PHANTOM]{Fore.WHITE} Select an option: ')
-    if res == "1":
-        memory.ChangeMemory(codes.bypass_pattern, codes.bypass_patched, 20)
-        menuPremium()
-    elif res == "X":
-        menuPremium()
-    else:
-        utils()
     
 def menuPremium():
     logo()
-    print("""
-1. Combat menu
-2. Visual menu
-3. Utils
-4. Exit""")
+    print(f"""{Fore.WHITE}────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────{Fore.RESET}
+{Fore.RESET}[{Fore.CYAN}1{Fore.RESET}]{Fore.LIGHTBLACK_EX} Aimbot                                       |{Fore.RESET}[{Fore.CYAN}10{Fore.RESET}]{Fore.LIGHTBLACK_EX} Coming Soon!
+{Fore.RESET}[{Fore.CYAN}2{Fore.RESET}]{Fore.LIGHTBLACK_EX} Aim Neck                                     |{Fore.RESET}[{Fore.CYAN}11{Fore.RESET}]{Fore.LIGHTBLACK_EX} Coming Soon!
+{Fore.RESET}[{Fore.CYAN}3{Fore.RESET}]{Fore.LIGHTBLACK_EX} No Recoil                                    |{Fore.RESET}[{Fore.CYAN}12{Fore.RESET}]{Fore.LIGHTBLACK_EX} Disable No Recoil
+{Fore.RESET}[{Fore.CYAN}4{Fore.RESET}]{Fore.LIGHTBLACK_EX} Aim FOV                                      |{Fore.RESET}[{Fore.CYAN}13{Fore.RESET}]{Fore.LIGHTBLACK_EX} Disable Aim FOV
+{Fore.RESET}[{Fore.CYAN}5{Fore.RESET}]{Fore.LIGHTBLACK_EX} No yellow                                    |{Fore.RESET}[{Fore.CYAN}14{Fore.RESET}]{Fore.LIGHTBLACK_EX} Disable No yellow
+{Fore.RESET}[{Fore.CYAN}6{Fore.RESET}]{Fore.LIGHTBLACK_EX} Antena                                       |{Fore.RESET}[{Fore.CYAN}15{Fore.RESET}]{Fore.LIGHTBLACK_EX} Disable Antena
+{Fore.RESET}[{Fore.CYAN}7{Fore.RESET}]{Fore.LIGHTBLACK_EX} Silent Speed                                 |{Fore.RESET}[{Fore.CYAN}16{Fore.RESET}]{Fore.LIGHTBLACK_EX} Disable Speed
+{Fore.RESET}[{Fore.CYAN}8{Fore.RESET}]{Fore.LIGHTBLACK_EX} Wall Climb                                   |{Fore.RESET}[{Fore.CYAN}17{Fore.RESET}]{Fore.LIGHTBLACK_EX} Disable Wall climb
+{Fore.RESET}[{Fore.CYAN}9{Fore.RESET}]{Fore.LIGHTBLACK_EX} Emulator bypass                              |{Fore.RESET}[{Fore.CYAN}X{Fore.RESET}]{Fore.RED} Exit
+{Fore.WHITE}────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────""")
     res = input(f'{Fore.CYAN}[PHANTOM]{Fore.WHITE} Select an option: ')
     if res == "1":
-        combat()
+        memory.ChangeMemory(codes.aim_pattern, codes.aimbot_patched, 9)
+        menuPremium()
     elif res == "2":
-        visual()
+        memory.ChangeMemory(codes.aim_pattern, codes.aimneck_patched, 9)
+        menuPremium()
     elif res == "3":
-        utils()
+        memory.ChangeMemory(codes.norecoil_pattern, codes.norecoil_patched, 4)
+        menuPremium()
     elif res == "4":
+        memory.ChangeMemory(codes.aimfov_pattern, codes.aimfov_patched, 8)
+        menuPremium()
+    elif res == "5":
+        memory.ChangeMemory(codes.noyellow_pattern, codes.noyellow_patched, 16)
+        menuPremium()
+    elif res == "6":
+        memory.ChangeMemory(codes.antena_pattern, codes.antena_patched, 8)
+        menuPremium()
+    elif res == "7":
+        memory.ChangeMemory(codes.silentspeed_pattern, codes.silentspeed_patched, 12)
+        menuPremium()
+    elif res == "8":
+        memory.ChangeMemory(codes.fly_pattern, codes.fly_patched, 24)
+        menuPremium()
+    elif res == "9":
+        memory.ChangeMemory(codes.bypass_pattern, codes.bypass_patched, 20)
+        menuPremium()
+    elif res == "10":
+        os.system('cls')
+        print(f"{Fore.CYAN}[PHANTOM]{Fore.WHITE} Coming soon...")
+        time.sleep(3)
+        menuPremium()
+    elif res == "11":
+        os.system('cls')
+        print(f"{Fore.CYAN}[PHANTOM]{Fore.WHITE} Coming soon...")
+        time.sleep(3)
+        menuPremium()
+    elif res == "12":
+        memory.ChangeMemory(codes.norecoil_patched, codes.norecoil_pattern, 4)
+        menuPremium()
+    elif res == "13":
+        memory.ChangeMemory(codes.aimfov_patched, codes.aimfov_pattern, 4)
+        menuPremium()
+    elif res == "14":
+        memory.ChangeMemory(codes.noyellow_patched, codes.noyellow_pattern, 16)
+        menuPremium()
+    elif res == "15":
+        memory.ChangeMemory(codes.antena_patched, codes.antena_pattern, 8)
+        menuPremium()
+    elif res == "16":
+        memory.ChangeMemory(codes.silentspeed_patched, codes.silentspeed_pattern, 12)
+        menuPremium()
+    elif res == "17":
+        memory.ChangeMemory(codes.fly_patched, codes.fly_pattern, 24)
+        menuPremium()
+    elif res == "X":
         os._exit(0)
     else:
         menuPremium()
